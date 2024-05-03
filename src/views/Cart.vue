@@ -19,16 +19,16 @@
 </template>
 
 <script>
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'CartView'
 })
 </script>
 
 <script setup>
-import { onMounted } from "vue"
-import { productsStore } from "@/stores/products"
-import { useRouter } from "vue-router"
+import { onMounted } from 'vue'
+import { productsStore } from '@/stores/products'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 

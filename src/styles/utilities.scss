@@ -1,0 +1,127 @@
+// @import './utilities/flex.scss';
+
+// Floats
+.float-right {
+  margin: 0 0 .5*$unit .5*$unit;
+}
+
+.float-left {
+  margin: 0 .5*$unit .5*$unit 0;
+}
+
+// Colors
+.text-black {
+  color: $black;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+// Sections
+.site-title {
+  a {
+    position: relative;
+    
+    &:after {
+      content: '';
+      width: 0;
+      height: 1px;
+      background-color: $blue;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transition: all .3s $ease-in-out-quart;
+    }
+
+    .text-blue {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 1px;
+        background-color: $black;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: all .3s $ease-in-out-quart;
+        z-index: 2;
+      }
+    }
+    
+    &:hover {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+
+      .text-blue:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+.github {
+  max-width: 400px;
+  margin-top: .5*$unit;
+  margin-bottom: 0;
+
+  a {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5 * $unit;
+    text-decoration: none;
+    transition: all .5s $ease-in-out-quart;
+  
+    &:hover {
+      color: $blue;
+  
+      img {
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  
+  a {
+    text-decoration: none;
+    font-family: 'bebas';
+    font-size: 2 * $unit;
+    transition: all .3s $ease-in-out-quart;
+
+    &:hover {
+      filter: brightness(.5);
+    }
+  }
+
+  .v-col {
+    $width: 100%;
+    width: $width;
+    flex: 0 1 $width;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s $ease-in-out-quart;
+
+    @media (min-width: 762px) {
+      $width: 50%;
+      width: $width;
+      flex: 0 1 $width;
+    }
+
+    @media (min-width: 1281px) {
+      $width: 33.333334%;
+      width: $width;
+      flex: 0 1 $width;
+    }
+  }
+}

@@ -25,15 +25,15 @@
 </template>
 
 <script>
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ProductItem',
 })
 </script>
 
 <script setup>
-import { productsStore } from "@/stores/products"
-import { formatCurrency } from "../utilities/formatCurrency"
+import { productsStore } from '@/stores/products'
+import { formatCurrency } from '@/utilities/formatCurrency'
 
 const store = productsStore()
 

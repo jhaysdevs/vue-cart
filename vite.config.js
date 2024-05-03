@@ -12,5 +12,15 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  server: {
+    proxy: {
+      // Proxy WebSocket connections
+      '/ws': {
+        target: 'ws://localhost:5173',
+        changeOrigin: true,
+        ws: true,
+      },
+    },
+  },
 })
